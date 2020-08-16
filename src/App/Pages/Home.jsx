@@ -9,7 +9,7 @@ import Cube from '../Components/Cube';
 
 const Home = () => (
   <Box fill="vertical" background="dark-1" align="center" justify="center" gap="xlarge">
-    <Scene height="200px" width="200px" perspective="500px">
+    <Scene height="200px" width="200px" perspective="700px">
       <Cube size={150} />
     </Scene>
     <Grid

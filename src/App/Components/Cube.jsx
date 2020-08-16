@@ -12,43 +12,50 @@ const FrontPanel = styled(Panel)`
   color: #000;
   word-wrap: break-word;
   background: snow;
-  transform: rotateY(0deg) translateZ(${({ size }) => (size ? `${size / 2}px` : '100px')});
+  transform: rotateY(0deg)
+    translateZ(${({ size }) => (size ? `${size / 2}px` : '100px')});
 `;
 
 const BackPanel = styled(Panel)`
   background: snow;
-  transform: rotateY(180deg) translateZ(${({ size }) => (size ? `${size / 2}px` : '100px')});
+  transform: rotateY(180deg)
+    translateZ(${({ size }) => (size ? `${size / 2}px` : '100px')});
 `;
 
 const TopPanel = styled(Panel)`
   background: #959595;
-  transform: rotateX(90deg) translateZ(${({ size }) => (size ? `${size / 2}px` : '100px')});
+  transform: rotateX(90deg)
+    translateZ(${({ size }) => (size ? `${size / 2}px` : '100px')});
 `;
 
 const BottomPanel = styled(Panel)`
   background: #959595;
-  transform: rotateX(-90deg) translateZ(${({ size }) => (size ? `${size / 2}px` : '100px')});
+  transform: rotateX(-90deg)
+    translateZ(${({ size }) => (size ? `${size / 2}px` : '100px')});
 `;
 
 const RightPanel = styled(Panel)`
   background: #d9d9d9;
-  transform: rotateY(90deg) translateZ(${({ size }) => (size ? `${size / 2}px` : '100px')});
+  transform: rotateY(90deg)
+    translateZ(${({ size }) => (size ? `${size / 2}px` : '100px')});
 `;
 
 const LeftPanel = styled(Panel)`
   background: #d9d9d9;
-  transform: rotateY(-90deg) translateZ(${({ size }) => (size ? `${size / 2}px` : '100px')});
+  transform: rotateY(-90deg)
+    translateZ(${({ size }) => (size ? `${size / 2}px` : '100px')});
 `;
 
 const rotate = css`
-  animation: rotate 3s cubic-bezier(0.455, 0.03, 0.515, 0.955) alternate infinite;
+  animation: rotate 3s cubic-bezier(0.455, 0.03, 0.515, 0.955) alternate
+    infinite;
 
   @keyframes rotate {
     from {
-      transform: translateZ(-50px) rotateX(25deg) rotateY(0deg);
+      transform: translateZ(-50px) rotateX(45deg) rotateY(-45deg);
     }
     to {
-      transform: translateZ(-50px) rotateX(180deg) rotateY(-180deg);
+      transform: translateZ(-50px) rotateX(-45deg) rotateY(45deg);
     }
   }
 `;
@@ -58,6 +65,7 @@ const CubeParent = styled.div`
   height: ${({ size }) => (size ? `${size}px` : '200px')};
   position: relative;
   transform-style: preserve-3d;
+  transform: translateZ(-50px) rotateX(45deg) rotateY(-45deg);
   ${({ animation }) => (animation !== undefined ? animation : rotate)};
 `;
 
